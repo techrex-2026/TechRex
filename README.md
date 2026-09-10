@@ -75,7 +75,7 @@ hardware plugged in.
 ├── escaner/            3D laser scanner (Nano) + its Flask server
 ├── web/                Dashboard, map, PythonAnywhere sync
 ├── docs/               Hardware notes, dead pins, calibration
-└── OUTDATED/           Retired hardware/code, kept for reference
+└── OUTDATED/           Earlier versions of the claw code, kept for reference
 ```
 
 ## Docs

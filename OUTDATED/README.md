@@ -1,12 +1,17 @@
 # Retired code
 
-Old versions worth keeping around but not maintaining:
+Progression of the claw motor code, kept for reference. Each file's
+header explains what it tried and why it was replaced.
 
-- The AccelStepper version of the claw motor code, before switching
-  to manual step sequencing with a ramp.
-- The original Uno sketch for the claw, before the move to the Mega.
-- `escaner_3d_laser.ino`, if you kept it — the ~6min high-res scan
-  (5° steps) mentioned in the comments of the fast scanner sketch.
+1. `garra_v1_drv8825_accelstepper.ino` — first driver (DRV8825),
+   AccelStepper library.
+2. `garra_v2_l298n_accelstepper.ino` — switched to the L298N driver,
+   still on AccelStepper.
+3. `garra_v3_pasos_manuales_sin_rampa.ino` — dropped AccelStepper for
+   manual coil sequencing, fixed delay (no acceleration ramp yet).
+4. `garra_v4_con_boton.ino` — push-button trigger on D22, before
+   moving to the always-run-on-power-up version used in the final
+   build.
 
-No need to keep this tidy, it's just a backup so old work doesn't
-get lost.
+The current version is `garra/garra.ino` — manual step sequencing
+with an acceleration ramp, sequence runs once in `setup()`.
