@@ -18,7 +18,21 @@ cd garra
 
 Hardware: NEMA 17 + L298N, SG90 servo.
 
-### 2. 3D scanner (Arduino Nano)
+### 2. Fossil box sensor (Arduino Uno)
+
+```
+cd caja
+# Upload caja_fosiles.ino — soil humidity, IR bone detector,
+# HuskyLens classification, RTC-stamped LCD display
+```
+
+Feeds `web/Servidor_mapa.py` over serial with CSV readings. See the
+file header for wiring and the four trained specimen IDs.
+
+Hardware: FC-28 soil sensor, IR obstacle module, HuskyLens, DS3231
+RTC, 16x2 I2C LCD.
+
+### 3. 3D scanner (Arduino Nano)
 
 ```
 cd escaner
@@ -28,7 +42,7 @@ python servidor_escaner.py    # -> http://localhost:5001
 
 Hardware: VL53L1X laser sensor, two SG90 servos (turntable + arm).
 
-### 3. Web dashboard (local)
+### 4. Web dashboard (local)
 
 ```
 cd web
@@ -38,7 +52,7 @@ python Servidor_mapa.py       # -> http://localhost:5000
 Flask server: map (Leaflet.js), field humidity monitoring, and a
 login portal for lab access.
 
-### 4. Syncing with PythonAnywhere (optional)
+### 5. Syncing with PythonAnywhere (optional)
 
 There are **two separate server files**, not one:
 
@@ -72,6 +86,7 @@ hardware plugged in.
 
 ```
 ├── garra/              Claw firmware (Mega): stepper + servo
+├── caja/               Fossil box sensor firmware (Uno): soil, IR, HuskyLens, LCD, RTC
 ├── escaner/            3D laser scanner (Nano) + its Flask server
 ├── web/                Dashboard, map, PythonAnywhere sync
 ├── docs/               Hardware notes, dead pins, calibration
